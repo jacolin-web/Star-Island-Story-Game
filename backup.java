@@ -20,20 +20,18 @@ public class StarIslandDemo
 
 class StarIsland extends JFrame
 {
-   //Main Character Attributes
-   public int b1Clicks, b2Clicks, b3Clicks;
    public StarIsland()
    {
       Container c ; 
       c=getContentPane();
       //end of container class
       
-      PlayerStats ps = new PlayerStats(0, 0, 0, 0, 0);
+      PlayerStats ps = new PlayerStats(0, 0, 0, 0, 0, 0);
       
       JTextField statusbar;
       statusbar = new JTextField();
       statusbar.setEditable(false);
-      statusbar.setText("Player's attributes: patience: " + ps.getPat() + " confidence: " + ps.getCon() + " political: " + ps.getPsavvy() + " networking: " + ps.getNet() + " male awareness: " + ps.getMaleAware());
+      statusbar.setText("Player's attributes: PATIENCE: " + ps.getPat() + " CONFIDENCE: " + ps.getCon() + " POLITICIAL: " + ps.getPsavvy() + " NETWORKING: " + ps.getNet() + " MALE AWARENESS: " + ps.getMaleAware() + " MENTORS: " + ps.getMentors());
       
       JTextArea textArea;
       textArea = new JTextArea(20, 20);
@@ -47,27 +45,27 @@ class StarIsland extends JFrame
       //end of panels
       JButton btn[] = new JButton[25];
       btn[0] = new JButton("START GAME");
-      for( int i = 1; i < 25; i +=3)
+
+
+      for( int i = 1; i < 25; i++)
       {
          btn[i] = new JButton();
          btn[i].setVisible(false);
          mainPanel.add(btn[i]);
-         btn[i].setText("One");   
       }
+
+      for( int i = 1; i < 25; i +=3)
+          {
+             btn[i].setText("One");   
+          }
 
       for( int i = 2; i < 25; i += 3)
           {
-            btn[i] = new JButton();
-             btn[i].setVisible(false);
-             mainPanel.add(btn[i]);
              btn[i].setText("Two");
           }
 
       for( int i = 3; i < 25; i += 3)
           {
-            btn[i] = new JButton();
-             btn[i].setVisible(false);
-             mainPanel.add(btn[i]);
              btn[i].setText("Three");
           }
           
@@ -82,13 +80,11 @@ class StarIsland extends JFrame
 
       //Second College
       btn[4].addActionListener(new College2Listener(btn[4], btn[5], btn[6], btn[7], textArea));
-      btn[5].addActionListener(new College2Listener(btn[4], btn[5], btn[6], btn[7], textArea));
-      btn[6].addActionListener(new College2Listener(btn[4], btn[5], btn[6], btn[7], textArea));
 
       //Second Response
-      //btn[5].addActionListener(new CollegeButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
-      //btn[6].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
-      //btn[7].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps,statusbar));
+      btn[5].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
+      btn[6].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
+      btn[7].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
 
        
       c.add(textArea, BorderLayout.NORTH);
@@ -185,6 +181,7 @@ class College2Listener implements ActionListener
          btn[5].setVisible(true);
          btn[6].setVisible(true);
          btn[7].setVisible(true);
+         
        textarea.setLineWrap(true);
    
    }
@@ -193,7 +190,7 @@ class College2Listener implements ActionListener
 class CollegeButtonListener implements ActionListener
 {
    private JTextArea textarea;
-   private JButton btn[] = new JButton[10];
+   private JButton btn[] = new JButton[5];
    private JTextField statusbar;
    private PlayerStats playerstats;
    private boolean finishedReading = false; 
@@ -238,7 +235,7 @@ class CollegeButtonListener implements ActionListener
         playerstats.setPsavvy(psavvy);
         playerstats.setMaleAware(maleAware);
         
-        statusbar.setText("Player's attributes: patience: " + playerstats.getPat() + " confidence: " + playerstats.getCon() + " political: " + playerstats.getPsavvy() + " networking: " + playerstats.getNet() + " male awareness: " + playerstats.getMaleAware());
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
         btn[4].setVisible(true);
         btn[4].setText("Continue");   
       }
@@ -273,7 +270,7 @@ class CollegeButtonListener implements ActionListener
         btn[2].setVisible(false);
         btn[3].setVisible(false);
         
-        textarea.setText("Bryce's all female group is cohesive and productive. The women form a Women in Engineering group on campus that forms lifetime friendships..");
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
         textarea.setLineWrap(true);
 
         patience -= 1;
@@ -286,11 +283,112 @@ class CollegeButtonListener implements ActionListener
         playerstats.setPsavvy(psavvy);
         playerstats.setMaleAware(maleAware);
 
-        statusbar.setText("Player's attributes: patience: " + playerstats.getPat() + " confidence: " + playerstats.getCon() + " political: " + playerstats.getPsavvy() + " networking: " + playerstats.getNet() + " male awareness: " + playerstats.getMaleAware());
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
         btn[4].setVisible(true);
         btn[4].setText("Continue");
+      } 
+    }  
+  }//end of College Button Listener
+
+class College2ButtonListener implements ActionListener
+{
+   private JTextArea textarea;
+   private JButton btn[] = new JButton[9];
+   private JTextField statusbar;
+   private PlayerStats playerstats;
+   private boolean finishedReading = false; 
+   
+   public College2ButtonListener(JButton btn1, JButton btn2, JButton btn3, JButton btn4, JTextArea t, PlayerStats ps, JTextField sb)
+   {
+      btn[5] = btn1;
+      btn[6] = btn2;
+      btn[7] = btn3;
+      btn[8] = btn4;
+      playerstats = ps;
+      statusbar = sb;
+      textarea = t;
+   }
+   
+   public void actionPerformed(ActionEvent e)
+   {
+      int patience = playerstats.getPat();
+      int confidence = playerstats.getCon();
+      int networking = playerstats.getNet();
+      int psavvy = playerstats.getPsavvy();
+      int maleAware = playerstats.getMaleAware();
+
+      if(e.getSource() == btn[5])
+      {
+         
+        btn[5].setVisible(false);
+        btn[6].setVisible(false);
+        btn[7].setVisible(false);
+        
+        textarea.setText("New choice 1");
+        textarea.setLineWrap(true);
+
+        patience++;
+        confidence--;
+        psavvy--;
+        maleAware -= 2;
+
+      
+        playerstats.setPat(patience);
+        playerstats.setCon(confidence);
+        playerstats.setPsavvy(psavvy);
+        playerstats.setMaleAware(maleAware);
+        
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
+        btn[8].setVisible(true);
+        btn[8].setText("Continue");   
+      }
+
+      else if(e.getSource() == btn[6])
+      {
+        btn[5].setVisible(false);
+        btn[6].setVisible(false);
+        btn[7].setVisible(false);
+        
+        textarea.setText("New choice 2");
+        textarea.setLineWrap(true);
+
+        psavvy++;
+        confidence++;
+        networking += 3;
+        maleAware += 3;
+
+        playerstats.setNet(networking);
+        playerstats.setCon(confidence);
+        playerstats.setPsavvy(psavvy);
+        playerstats.setMaleAware(maleAware);
+
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
+        btn[8].setVisible(true);
+        btn[8].setText("Continue");
+      }
+
+      else
+      {
+        btn[5].setVisible(false);
+        btn[6].setVisible(false);
+        btn[7].setVisible(false);
+        
+        textarea.setText("New choice 3");
+        textarea.setLineWrap(true);
+
+        patience -= 1;
+        confidence+=3;
+        networking += 3;
+        maleAware += 1;
+
+        playerstats.setNet(networking);
+        playerstats.setCon(confidence);
+        playerstats.setPsavvy(psavvy);
+        playerstats.setMaleAware(maleAware);
+
+        statusbar.setText("Player's attributes: PATIENCE: " + playerstats.getPat() + " CONFIDENCE: " + playerstats.getCon() + " POLITICIAL: " + playerstats.getPsavvy() + " NETWORKING: " + playerstats.getNet() + " MALE AWARENESS: " + playerstats.getMaleAware() + " MENTORS: " + playerstats.getMentors());
+        btn[8].setVisible(true);
+        btn[8].setText("Continue");
       }  
-   
-   }//end of College Button Listener
-   
-}//end of Star Island
+    }
+}//end of College Button Listener

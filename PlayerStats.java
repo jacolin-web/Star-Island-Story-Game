@@ -1,14 +1,15 @@
 public class PlayerStats
 {
-   private int patience, confidence, psavvy, networking, maleaware;
+   private int patience, confidence, psavvy, networking, maleaware, mentors;
    
-   public PlayerStats(int patience, int confidence, int psavvy, int networking, int maleaware)
+   public PlayerStats(int patience, int confidence, int psavvy, int networking, int maleaware, int mentors)
    {
       this.patience = patience;
       this.confidence = confidence;
       this.psavvy = psavvy; 
       this.networking = networking;
-      this.maleaware = maleaware;   
+      this.maleaware = maleaware;
+      this.mentors = mentors;   
    }
    
    //Beginning of Get Methods 
@@ -37,6 +38,11 @@ public class PlayerStats
       return maleaware;
    }
    
+   public int getMentors()
+   {  
+      return mentors;
+   }
+   
    //Beginning of Set Methods
    
    public void setPat (int patience)
@@ -62,6 +68,11 @@ public class PlayerStats
    public void setMaleAware(int maleaware)
    {  
       this.maleaware = maleaware;
+   }
+   
+   public void setMentors(int mentors)
+   {  
+      this.mentors = mentors;
    }
    
 }
