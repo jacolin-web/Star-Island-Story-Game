@@ -1,0 +1,1 @@
+ Mr. Github accepts Bryce's offer and joins a group.  He then introduces Bryce to his group.  One of his group ultimately becomes a mentor.    Confidence +1, Political Savvy + 2, Networking +5, Patience +1;     ACQUIRES: 1 MENTOR
