@@ -1,0 +1,11 @@
+You enter your college Intro to CS class. You are one of 4 women in a class of 123. Project groups are forming and the four women find themselves standing alone. You
+
+One group is shouting that they are looking for someone experienced in JS. You are experienced in JS. . Boy, wearing Github tshirt, says: "Oh, We are all full".
+
+You:
+
+1. Not worth the trouble;Casually Open your Github;Walk away
+
+2. Poll his friends
+
+3. Form your own group with the women and rock it.
