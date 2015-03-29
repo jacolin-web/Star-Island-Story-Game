@@ -86,9 +86,9 @@ class StarIsland extends JFrame
       btn[6].addActionListener(new College2Listener(btn[4], btn[5], btn[6], btn[7], textArea));
 
       //Second Response
-      btn[5].addActionListener(new CollegeButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
-      btn[6].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
-      btn[7].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps,statusbar));
+      //btn[5].addActionListener(new CollegeButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
+      //btn[6].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps, statusbar));
+      //btn[7].addActionListener(new College2ButtonListener(btn[5], btn[6], btn[7], btn[8], textArea, ps,statusbar));
 
        
       c.add(textArea, BorderLayout.NORTH);
@@ -193,20 +193,17 @@ class College2Listener implements ActionListener
 class CollegeButtonListener implements ActionListener
 {
    private JTextArea textarea;
-   private JButton button1;
-   private JButton button2;
-   private JButton button3;
-   private JButton button4;
+   private JButton btn[] = new JButton[10];
    private JTextField statusbar;
    private PlayerStats playerstats;
    private boolean finishedReading = false; 
    
    public CollegeButtonListener(JButton btn1, JButton btn2, JButton btn3, JButton btn4, JTextArea t, PlayerStats ps, JTextField sb)
    {
-      button1 = btn1;
-      button2 = btn2;
-      button3 = btn3;
-      button4 = btn4;
+      btn[1] = btn1;
+      btn[2] = btn2;
+      btn[3] = btn3;
+      btn[4] = btn4;
       playerstats = ps;
       statusbar = sb;
       textarea = t;
@@ -220,12 +217,12 @@ class CollegeButtonListener implements ActionListener
       int psavvy = playerstats.getPsavvy();
       int maleAware = playerstats.getMaleAware();
 
-      if(e.getSource() == button1)
+      if(e.getSource() == btn[1])
       {
          
-        button1.setVisible(false);
-        button2.setVisible(false);
-        button3.setVisible(false);
+        btn[1].setVisible(false);
+        btn[2].setVisible(false);
+        btn[3].setVisible(false);
         
         textarea.setText("You eventually find another group but feel slightly defeated and discouraged.");
         textarea.setLineWrap(true);
@@ -242,15 +239,15 @@ class CollegeButtonListener implements ActionListener
         playerstats.setMaleAware(maleAware);
         
         statusbar.setText("Player's attributes: patience: " + playerstats.getPat() + " confidence: " + playerstats.getCon() + " political: " + playerstats.getPsavvy() + " networking: " + playerstats.getNet() + " male awareness: " + playerstats.getMaleAware());
-        button4.setVisible(true);
-        button4.setText("Continue");   
+        btn[4].setVisible(true);
+        btn[4].setText("Continue");   
       }
 
-      else if(e.getSource() == button2)
+      else if(e.getSource() == btn[2])
       {
-        button1.setVisible(false);
-        button2.setVisible(false);
-        button3.setVisible(false);
+        btn[1].setVisible(false);
+        btn[2].setVisible(false);
+        btn[3].setVisible(false);
         
         textarea.setText(" Friends say 'Hey, I think we could use her' and override Mr. GitHub.");
         textarea.setLineWrap(true);
@@ -266,15 +263,15 @@ class CollegeButtonListener implements ActionListener
         playerstats.setMaleAware(maleAware);
 
         statusbar.setText("Player's attributes: patience: " + playerstats.getPat() + " confidence: " + playerstats.getCon() + " political: " + playerstats.getPsavvy() + " networking: " + playerstats.getNet() + " male awareness: " + playerstats.getMaleAware());
-        button4.setVisible(true);
-        button4.setText("Continue");
+        btn[4].setVisible(true);
+        btn[4].setText("Continue");
       }
 
       else
       {
-        button1.setVisible(false);
-        button2.setVisible(false);
-        button3.setVisible(false);
+        btn[1].setVisible(false);
+        btn[2].setVisible(false);
+        btn[3].setVisible(false);
         
         textarea.setText("Bryce's all female group is cohesive and productive. The women form a Women in Engineering group on campus that forms lifetime friendships..");
         textarea.setLineWrap(true);
@@ -290,8 +287,8 @@ class CollegeButtonListener implements ActionListener
         playerstats.setMaleAware(maleAware);
 
         statusbar.setText("Player's attributes: patience: " + playerstats.getPat() + " confidence: " + playerstats.getCon() + " political: " + playerstats.getPsavvy() + " networking: " + playerstats.getNet() + " male awareness: " + playerstats.getMaleAware());
-        button4.setVisible(true);
-        button4.setText("Continue");
+        btn[4].setVisible(true);
+        btn[4].setText("Continue");
       }  
    
    }//end of College Button Listener
